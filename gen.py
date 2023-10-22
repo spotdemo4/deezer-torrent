@@ -125,4 +125,5 @@ if upload != 'n' and upload != 'N' and os.getenv('QBIT_HOST') and os.getenv('QBI
     print("Uploading to qBittorrent...")
     qb = Client(os.getenv('QBIT_HOST'))
     qb.login(os.getenv('QBIT_USER'), os.getenv('QBIT_PASS'))
-    qb.download_from_file(f'./torrents/[Orpheus] {deezer_album.artist.name} - {deezer_album.title} ({deezer_album.release_date.year}) [WEB] [FLAC].torrent')
+    qb_file = open(f'./torrents/[Orpheus] {deezer_album.artist.name} - {deezer_album.title} ({deezer_album.release_date.year}) [WEB] [FLAC].torrent', 'rb')
+    qb.download_from_file(qb_file)
