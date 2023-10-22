@@ -1,5 +1,8 @@
 #!/bin/sh
 
+python -m venv ./env
+source ./env/bin/activate
+
 git clone https://github.com/yarrm80s/orpheusdl.git
 pip install -r orpheusdl/requirements.txt
 git clone https://github.com/uhwot/orpheusdl-deezer orpheusdl/modules/deezer
